@@ -3,16 +3,9 @@ using MediatorFlow.Core.Contracts;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
-
+using MediatorFlow.Application.Ping;
+namespace MediatorFlow.Tests;
 // Sample request
-public record PingRequest() : IRequest<string>;
-
-// Sample handler
-public class PingHandler : IRequestHandler<PingRequest, string>
-{
-    public Task<string> Handle(PingRequest request, CancellationToken cancellationToken)
-        => Task.FromResult("Pong");
-}
 
 // Test pipeline behavior
 public class LoggingBehaviorForTest<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
@@ -40,7 +33,8 @@ public class MediatorPipelineTests
         services.AddSingleton<IPipelineBehavior<PingRequest, string>, LoggingBehaviorForTest<PingRequest, string>>();
         services.AddSingleton<IRequestHandler<PingRequest, string>, PingHandler>();
         services.AddSingleton<IMediator, MediatorFlow.Core.Internal.Mediator>();
-
+        services.AddSingleton<IDispatcher, MediatorFlow.Generated.GeneratedDispatcher>();
+        
         var provider = services.BuildServiceProvider();
         var mediator = provider.GetRequiredService<IMediator>();
         var behavior = provider.GetRequiredService<IPipelineBehavior<PingRequest, string>>() as LoggingBehaviorForTest<PingRequest, string>;

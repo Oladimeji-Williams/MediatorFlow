@@ -5,28 +5,9 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
-
+using MediatorFlow.Application.Ping;
 namespace MediatorFlow.Tests.Pipeline;
 
-// Request
-public record PingRequest() : IRequest<string>;
-
-// Handler
-public class TrackingHandler : IRequestHandler<PingRequest, string>
-{
-    private readonly List<string> _log;
-
-    public TrackingHandler(List<string> log)
-    {
-        _log = log;
-    }
-
-    public Task<string> Handle(PingRequest request, CancellationToken cancellationToken)
-    {
-        _log.Add("Handler Executed");
-        return Task.FromResult("Pong");
-    }
-}
 
 // Behavior
 public class OrderTrackingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
@@ -64,6 +45,7 @@ public class PipelineOrderTests
 
         var log = new List<string>();
         services.AddSingleton(log);
+        services.AddSingleton<IDispatcher, MediatorFlow.Generated.GeneratedDispatcher>();
 
         // Register handler
         services.AddSingleton<IRequestHandler<PingRequest, string>, TrackingHandler>();

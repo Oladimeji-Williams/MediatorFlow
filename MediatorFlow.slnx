@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="MediatorFlow.Application/MediatorFlow.Application.csproj" />
   <Project Path="MediatorFlow.Core/MediatorFlow.Core.csproj" />
+  <Project Path="MediatorFlow.Generator/MediatorFlow.Generator.csproj" />
   <Project Path="MediatorFlow.Tests/MediatorFlow.Tests.csproj" />
 </Solution>

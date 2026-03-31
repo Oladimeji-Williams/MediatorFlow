@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MediatorFlow.Core\MediatorFlow.Core.csproj" />
+    <ProjectReference Include="..\MediatorFlow.Application\MediatorFlow.Application.csproj" />
   </ItemGroup>
 
 </Project>

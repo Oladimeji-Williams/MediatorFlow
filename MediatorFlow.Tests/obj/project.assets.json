@@ -448,6 +448,19 @@
           "build/net8.0/xunit.runner.visualstudio.props": {}
         }
       },
+      "MediatorFlow.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "MediatorFlow.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MediatorFlow.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MediatorFlow.Application.dll": {}
+        }
+      },
       "MediatorFlow.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -1106,6 +1119,11 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "MediatorFlow.Application/1.0.0": {
+      "type": "project",
+      "path": "../MediatorFlow.Application/MediatorFlow.Application.csproj",
+      "msbuildProject": "../MediatorFlow.Application/MediatorFlow.Application.csproj"
+    },
     "MediatorFlow.Core/1.0.0": {
       "type": "project",
       "path": "../MediatorFlow.Core/MediatorFlow.Core.csproj",
@@ -1114,6 +1132,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "MediatorFlow.Application >= 1.0.0",
       "MediatorFlow.Core >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection >= 10.0.5",
       "Microsoft.Extensions.Logging.Abstractions >= 10.0.5",
@@ -1148,6 +1167,9 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
+            "C:\\Users\\OladimejiWilliams\\Desktop\\Software Engineering\\MediatorFlow\\MediatorFlow.Application\\MediatorFlow.Application.csproj": {
+              "projectPath": "C:\\Users\\OladimejiWilliams\\Desktop\\Software Engineering\\MediatorFlow\\MediatorFlow.Application\\MediatorFlow.Application.csproj"
+            },
             "C:\\Users\\OladimejiWilliams\\Desktop\\Software Engineering\\MediatorFlow\\MediatorFlow.Core\\MediatorFlow.Core.csproj": {
               "projectPath": "C:\\Users\\OladimejiWilliams\\Desktop\\Software Engineering\\MediatorFlow\\MediatorFlow.Core\\MediatorFlow.Core.csproj"
             }
