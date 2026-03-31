@@ -3,27 +3,35 @@ using MediatorFlow.Core.Contracts;
 
 namespace MediatorFlow.Core.Internal;
 
-internal class Mediator(IServiceProvider serviceProvider) : IMediator
+internal class Mediator : IMediator
 {
-    private readonly IServiceProvider _serviceProvider = serviceProvider;
+    private readonly IServiceProvider _serviceProvider;
+    private readonly IDispatcher _dispatcher;
+
+    public Mediator(IServiceProvider serviceProvider, IDispatcher dispatcher)
+    {
+        _serviceProvider = serviceProvider;
+        _dispatcher = dispatcher;
+    }
 
     public async Task<TResponse> Send<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default)
     {
         if (request == null) throw new ArgumentNullException(nameof(request));
-
-        // Resolve the handler
-        var handlerType = typeof(IRequestHandler<,>).MakeGenericType(request.GetType(), typeof(TResponse));
-        dynamic handler = _serviceProvider.GetService(handlerType);
-
-        if (handler == null)
-            throw new InvalidOperationException($"No handler registered for {request.GetType().Name}");
 
         // Resolve pipeline behaviors
         var behaviorType = typeof(IPipelineBehavior<,>).MakeGenericType(request.GetType(), typeof(TResponse));
         var behaviors = ((IEnumerable<object>?)_serviceProvider.GetService(typeof(IEnumerable<>).MakeGenericType(behaviorType))) ?? Enumerable.Empty<object>();
 
         // Build pipeline delegate chain
-        RequestHandlerDelegate<TResponse> handlerDelegate = () => handler.Handle((dynamic)request, cancellationToken);
+        RequestHandlerDelegate<TResponse> handlerDelegate = async () =>
+        {
+            var result = await _dispatcher.Dispatch(
+                request,
+                _serviceProvider,
+                cancellationToken);
+
+            return (TResponse)result!;
+        };
 
         foreach (dynamic behavior in behaviors.Reverse()) // reverse to wrap outermost first
         {

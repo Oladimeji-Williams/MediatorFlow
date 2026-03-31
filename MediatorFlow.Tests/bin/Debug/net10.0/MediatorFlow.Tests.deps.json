@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v10.0": {
       "MediatorFlow.Tests/1.0.0": {
         "dependencies": {
+          "MediatorFlow.Application": "1.0.0",
           "MediatorFlow.Core": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "10.0.5",
           "Microsoft.Extensions.Logging.Abstractions": "10.0.5",
@@ -363,6 +364,17 @@
           }
         }
       },
+      "MediatorFlow.Application/1.0.0": {
+        "dependencies": {
+          "MediatorFlow.Core": "1.0.0"
+        },
+        "runtime": {
+          "MediatorFlow.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "MediatorFlow.Core/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "10.0.5",
@@ -480,6 +492,11 @@
       "sha512": "sha512-yMb6vMESlSrE3Wfj7V6cjQ3S4TXdXpRqYeNEI3zsX31uTsGMJjEw6oD5F5u1cHnMptjhEECnmZSsPxB6ChZHDQ==",
       "path": "xunit.extensibility.execution/2.9.3",
       "hashPath": "xunit.extensibility.execution.2.9.3.nupkg.sha512"
+    },
+    "MediatorFlow.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "MediatorFlow.Core/1.0.0": {
       "type": "project",
