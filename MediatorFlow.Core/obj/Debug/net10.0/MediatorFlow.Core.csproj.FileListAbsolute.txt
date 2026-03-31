@@ -10,3 +10,4 @@ C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlo
 C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Core\obj\Debug\net10.0\MediatorFlow.Core.pdb
 C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Core\obj\Debug\net10.0\ref\MediatorFlow.Core.dll
 C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Core\obj\Debug\net10.0\MediatorFlow.Core.sourcelink.json
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Core\obj\Debug\net10.0\MediatorFlow.Core.csproj.AssemblyReference.cache
