@@ -24,18 +24,31 @@ public static class ServiceCollectionExtensions
             services.AddTransient(handler.Interface, handler.Implementation);
         }
 
-        // Register all INotificationHandler<>
-        var notificationHandlerTypes = assemblies
-            .SelectMany(a => a.GetTypes())
-            .Where(t => !t.IsAbstract && !t.IsInterface)
-            .SelectMany(t => t.GetInterfaces()
-                .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(INotificationHandler<>))
-                .Select(i => new { Interface = i, Implementation = t }));
+    // Register all INotificationHandler<>
+    var notificationHandlerTypes = assemblies
+        .SelectMany(a => a.GetTypes())
+        .Where(t => !t.IsAbstract && !t.IsInterface)
+        .SelectMany(t => t.GetInterfaces()
+            .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(INotificationHandler<>))
+            .Select(i => new { Interface = i, Implementation = t }));
 
-        foreach (var handler in notificationHandlerTypes)
-        {
-            services.AddTransient(handler.Interface, handler.Implementation);
-        }
+    foreach (var handler in notificationHandlerTypes)
+    {
+        services.AddTransient(handler.Interface, handler.Implementation);
+    }
+
+    // Register all IPipelineBehavior<,>
+    var behaviorTypes = assemblies
+        .SelectMany(a => a.GetTypes())
+        .Where(t => !t.IsAbstract && !t.IsInterface)
+        .SelectMany(t => t.GetInterfaces()
+            .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IPipelineBehavior<,>))
+            .Select(i => new { Interface = i, Implementation = t }));
+
+    foreach (var behavior in behaviorTypes)
+    {
+        services.AddTransient(behavior.Interface, behavior.Implementation);
+    }
 
         // Register the Mediator
         services.AddSingleton<IMediator, Mediator>();
