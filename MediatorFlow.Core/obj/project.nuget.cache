@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "7XZvbzboFwI=",
+  "dgSpecHash": "Gh/OlAli1Jk=",
   "success": true,
   "projectFilePath": "C:\\Users\\OladimejiWilliams\\Desktop\\Software Engineering\\MediatorFlow\\MediatorFlow.Core\\MediatorFlow.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OladimejiWilliams\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.5\\microsoft.extensions.dependencyinjection.10.0.5.nupkg.sha512",
-    "C:\\Users\\OladimejiWilliams\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.5\\microsoft.extensions.dependencyinjection.abstractions.10.0.5.nupkg.sha512"
+    "C:\\Users\\OladimejiWilliams\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.5\\microsoft.extensions.dependencyinjection.abstractions.10.0.5.nupkg.sha512",
+    "C:\\Users\\OladimejiWilliams\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.5\\microsoft.extensions.logging.abstractions.10.0.5.nupkg.sha512"
   ],
   "logs": []
 }
