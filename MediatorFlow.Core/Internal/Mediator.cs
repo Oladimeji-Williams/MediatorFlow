@@ -18,7 +18,20 @@ internal class Mediator(IServiceProvider serviceProvider) : IMediator
         if (handler == null)
             throw new InvalidOperationException($"No handler registered for {request.GetType().Name}");
 
-        return await handler.Handle((dynamic)request, cancellationToken);
+        // Resolve pipeline behaviors
+        var behaviorType = typeof(IPipelineBehavior<,>).MakeGenericType(request.GetType(), typeof(TResponse));
+        var behaviors = ((IEnumerable<object>?)_serviceProvider.GetService(typeof(IEnumerable<>).MakeGenericType(behaviorType))) ?? Enumerable.Empty<object>();
+
+        // Build pipeline delegate chain
+        RequestHandlerDelegate<TResponse> handlerDelegate = () => handler.Handle((dynamic)request, cancellationToken);
+
+        foreach (dynamic behavior in behaviors.Reverse()) // reverse to wrap outermost first
+        {
+            var next = handlerDelegate;
+            handlerDelegate = () => behavior.Handle((dynamic)request, cancellationToken, next);
+        }
+
+        return await handlerDelegate();
     }
 
     public async Task Publish<TNotification>(TNotification notification, CancellationToken cancellationToken = default)
