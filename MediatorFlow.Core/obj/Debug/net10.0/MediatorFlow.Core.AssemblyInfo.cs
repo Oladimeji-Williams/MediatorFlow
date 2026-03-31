@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediatorFlow.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48b1806442e463c5e3411b81f9fd3129424306a1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5b0f5a27f00f94b7f832d9bd41beb4812ca4c7d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediatorFlow.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediatorFlow.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
