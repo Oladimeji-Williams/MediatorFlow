@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute(("A mediator pattern library with built-in pipeline behaviors and source generator " +
     "for auto-registration."))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+30ed067a2320cfbc4059034b758da8fb20cf87d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+47ad02de9b2df752db926aea68bf6789450d7ffe")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediatorFlow.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediatorFlow.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.2.0")]

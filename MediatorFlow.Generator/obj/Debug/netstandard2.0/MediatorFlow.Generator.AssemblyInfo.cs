@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Source generator for MediatorFlow")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+30ed067a2320cfbc4059034b758da8fb20cf87d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+47ad02de9b2df752db926aea68bf6789450d7ffe")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediatorFlow.Generator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediatorFlow.Generator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.2.0")]

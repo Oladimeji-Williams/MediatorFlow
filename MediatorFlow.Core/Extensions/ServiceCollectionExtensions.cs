@@ -54,6 +54,7 @@ public static class ServiceCollectionExtensions
 
         // Mediator
         services.AddSingleton<IMediator, Mediator>();
+        services.AddSingleton<IDispatcher, Dispatcher>();
         return services;
 
     }
