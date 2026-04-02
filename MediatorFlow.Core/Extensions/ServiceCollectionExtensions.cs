@@ -1,58 +1,61 @@
 using MediatorFlow.Core.Abstractions;
+using MediatorFlow.Core.Behaviors;
 using MediatorFlow.Core.Internal;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Linq;
 using System.Reflection;
 
 namespace MediatorFlow.Core.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddMediatorFlow(this IServiceCollection services, Assembly[]? assemblies = null)
+    public static IServiceCollection AddMediatorFlow(this IServiceCollection services, params Assembly[] assemblies)
     {
-        assemblies ??= AppDomain.CurrentDomain.GetAssemblies();
+        assemblies ??= new[] { Assembly.GetCallingAssembly() };
 
-        // Register all IRequestHandler<,>
-        var requestHandlerTypes = assemblies
-            .SelectMany(a => a.GetTypes())
+        var types = assemblies.SelectMany(a =>
+        {
+            try { return a.GetTypes(); }
+            catch { return Array.Empty<Type>(); }
+        });
+
+        // IRequestHandler
+        var requestHandlers = types
             .Where(t => !t.IsAbstract && !t.IsInterface)
             .SelectMany(t => t.GetInterfaces()
                 .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IRequestHandler<,>))
-                .Select(i => new { Interface = i, Implementation = t }));
+                .Select(i => new { Interface = i, Implementation = t }))
+            .GroupBy(x => new { x.Interface, x.Implementation })
+            .Select(g => g.First());
 
-        foreach (var handler in requestHandlerTypes)
-        {
+        foreach (var handler in requestHandlers)
             services.AddTransient(handler.Interface, handler.Implementation);
-        }
 
-    // Register all INotificationHandler<>
-    var notificationHandlerTypes = assemblies
-        .SelectMany(a => a.GetTypes())
-        .Where(t => !t.IsAbstract && !t.IsInterface)
-        .SelectMany(t => t.GetInterfaces()
-            .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(INotificationHandler<>))
-            .Select(i => new { Interface = i, Implementation = t }));
+        // INotificationHandler
+        var notificationHandlers = types
+            .Where(t => !t.IsAbstract && !t.IsInterface)
+            .SelectMany(t => t.GetInterfaces()
+                .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(INotificationHandler<>))
+                .Select(i => new { Interface = i, Implementation = t }))
+            .GroupBy(x => new { x.Interface, x.Implementation })
+            .Select(g => g.First());
 
-    foreach (var handler in notificationHandlerTypes)
-    {
-        services.AddTransient(handler.Interface, handler.Implementation);
-    }
+        foreach (var handler in notificationHandlers)
+            services.AddTransient(handler.Interface, handler.Implementation);
 
-    // Register all IPipelineBehavior<,>
-    var behaviorTypes = assemblies
-        .SelectMany(a => a.GetTypes())
-        .Where(t => !t.IsAbstract && !t.IsInterface)
-        .SelectMany(t => t.GetInterfaces()
-            .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IPipelineBehavior<,>))
-            .Select(i => new { Interface = i, Implementation = t }));
+        // Pipeline (ordered)
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RetryBehavior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(MetricsBehavior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
-    foreach (var behavior in behaviorTypes)
-    {
-        services.AddTransient(behavior.Interface, behavior.Implementation);
-    }
 
-        // Register the Mediator
+
+        // Mediator
         services.AddSingleton<IMediator, Mediator>();
-
         return services;
+
     }
 }
+

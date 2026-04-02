@@ -30,12 +30,14 @@ public class MediatorFlowGenerator : ISourceGenerator
 
         var sb = new StringBuilder();
 
+        sb.AppendLine("#nullable enable");
         sb.AppendLine("using System;");
         sb.AppendLine("using System.Threading;");
         sb.AppendLine("using System.Threading.Tasks;");
         sb.AppendLine("using Microsoft.Extensions.DependencyInjection;");
         sb.AppendLine("using MediatorFlow.Core.Contracts;");
         sb.AppendLine("using MediatorFlow.Core.Abstractions;");
+        sb.AppendLine("using System.Linq;");
         sb.AppendLine();
         sb.AppendLine("namespace MediatorFlow.Generated;");
         sb.AppendLine();
@@ -53,11 +55,28 @@ public class MediatorFlowGenerator : ISourceGenerator
                 var responseType = iface.TypeArguments[1];
 
                 sb.AppendLine($@"
-        if (request is {requestType.ToDisplayString()} req_{requestType.Name})
-        {{
-            var handler = provider.GetRequiredService<IRequestHandler<{requestType.ToDisplayString()}, {responseType.ToDisplayString()}>>();
-            return await handler.Handle(req_{requestType.Name}, cancellationToken);
-        }}");
+                if (request is {requestType.ToDisplayString()} req_{requestType.Name})
+                {{
+                    var handler = provider.GetRequiredService<IRequestHandler<{requestType.ToDisplayString()}, {responseType.ToDisplayString()}>>();
+
+                    RequestHandlerDelegate<{responseType.ToDisplayString()}> next =
+                        () => handler.Handle(req_{requestType.Name}, cancellationToken);
+
+                    var behaviors = provider.GetServices<IPipelineBehavior<{requestType.ToDisplayString()}, {responseType.ToDisplayString()}>>();
+
+                    var behaviorArray = behaviors as IPipelineBehavior<{requestType.ToDisplayString()}, {responseType.ToDisplayString()}>[] 
+                                        ?? behaviors.ToArray();
+
+                    for (int i = 0; i < behaviorArray.Length; i++)
+                    {{
+                        var behavior = behaviorArray[i];
+                        var current = next;
+                        next = () => behavior.Handle(req_{requestType.Name}, cancellationToken, current);
+                    }}
+
+                    return await next();
+                }}
+                ");
             }
         }
 

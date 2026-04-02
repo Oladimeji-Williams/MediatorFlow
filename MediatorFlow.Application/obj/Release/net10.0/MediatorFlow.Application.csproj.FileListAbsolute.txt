@@ -1,0 +1,16 @@
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\bin\Release\net10.0\MediatorFlow.Application.deps.json
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\bin\Release\net10.0\MediatorFlow.Application.dll
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\bin\Release\net10.0\MediatorFlow.Application.pdb
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\bin\Release\net10.0\MediatorFlow.Core.dll
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\bin\Release\net10.0\MediatorFlow.Core.pdb
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\MediatorFlow.Application.csproj.AssemblyReference.cache
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\MediatorFlow.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\MediatorFlow.Application.AssemblyInfoInputs.cache
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\MediatorFlow.Application.AssemblyInfo.cs
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\MediatorFlow.Application.csproj.CoreCompileInputs.cache
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\MediatorFlow.Application.sourcelink.json
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\Mediator.74D2016E.Up2Date
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\MediatorFlow.Application.dll
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\refint\MediatorFlow.Application.dll
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\MediatorFlow.Application.pdb
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\obj\Release\net10.0\ref\MediatorFlow.Application.dll

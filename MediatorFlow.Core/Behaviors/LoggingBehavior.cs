@@ -2,9 +2,9 @@ using MediatorFlow.Core.Abstractions;
 using MediatorFlow.Core.Contracts;
 using Microsoft.Extensions.Logging;
 
-namespace MediatorFlow.Core.Internal.Behaviors;
+namespace MediatorFlow.Core.Behaviors;
 
-internal class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
 {
     private readonly ILogger<LoggingBehavior<TRequest, TResponse>> _logger;

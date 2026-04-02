@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MediatorFlow.Application</id>
+    <version>1.0.0</version>
+    <authors>MediatorFlow.Application</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="30ed067a2320cfbc4059034b758da8fb20cf87d4" />
+    <dependencies>
+      <group targetFramework="net10.0">
+        <dependency id="MediatorFlow.Core" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Application\bin\Release\net10.0\MediatorFlow.Application.dll" target="lib\net10.0\MediatorFlow.Application.dll" />
+  </files>
+</package>

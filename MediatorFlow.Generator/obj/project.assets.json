@@ -1430,7 +1430,7 @@
     "C:\\Users\\OladimejiWilliams\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.2",
     "restore": {
       "projectUniqueName": "C:\\Users\\OladimejiWilliams\\Desktop\\Software Engineering\\MediatorFlow\\MediatorFlow.Generator\\MediatorFlow.Generator.csproj",
       "projectName": "MediatorFlow.Generator",
