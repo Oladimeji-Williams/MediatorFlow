@@ -56,7 +56,7 @@
           "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-      "MediatorFlow.Core/1.0.0": {
+      "MediatorFlow.Core/1.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -207,7 +207,7 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "MediatorFlow.Core/1.0.0": {
+    "MediatorFlow.Core/1.0.2": {
       "type": "project",
       "path": "../MediatorFlow.Core/MediatorFlow.Core.csproj",
       "msbuildProject": "../MediatorFlow.Core/MediatorFlow.Core.csproj"
@@ -215,7 +215,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "MediatorFlow.Core >= 1.0.0"
+      "MediatorFlow.Core >= 1.0.2"
     ]
   },
   "packageFolders": {

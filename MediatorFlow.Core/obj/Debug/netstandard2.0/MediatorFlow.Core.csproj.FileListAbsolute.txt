@@ -1,0 +1,6 @@
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Core\obj\Debug\netstandard2.0\MediatorFlow.Core.csproj.AssemblyReference.cache
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Core\obj\Debug\netstandard2.0\MediatorFlow.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Core\obj\Debug\netstandard2.0\MediatorFlow.Core.AssemblyInfoInputs.cache
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Core\obj\Debug\netstandard2.0\MediatorFlow.Core.AssemblyInfo.cs
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Core\obj\Debug\netstandard2.0\MediatorFlow.Core.csproj.CoreCompileInputs.cache
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Core\obj\Debug\netstandard2.0\MediatorFlow.Core.sourcelink.json

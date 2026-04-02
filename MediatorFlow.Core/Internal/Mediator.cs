@@ -18,28 +18,14 @@ internal class Mediator : IMediator
     {
         if (request == null) throw new ArgumentNullException(nameof(request));
 
-        // Resolve pipeline behaviors
-        var behaviorType = typeof(IPipelineBehavior<,>).MakeGenericType(request.GetType(), typeof(TResponse));
-        var behaviors = ((IEnumerable<object>?)_serviceProvider.GetService(typeof(IEnumerable<>).MakeGenericType(behaviorType))) ?? Enumerable.Empty<object>();
+        var result = await _dispatcher.Dispatch(
+            request,
+            _serviceProvider,
+            cancellationToken);
+        if (result is not TResponse typed)
+            throw new InvalidOperationException($"Invalid response type for {request.GetType().Name}");
 
-        // Build pipeline delegate chain
-        RequestHandlerDelegate<TResponse> handlerDelegate = async () =>
-        {
-            var result = await _dispatcher.Dispatch(
-                request,
-                _serviceProvider,
-                cancellationToken);
-
-            return (TResponse)result!;
-        };
-
-        foreach (dynamic behavior in behaviors.Reverse()) // reverse to wrap outermost first
-        {
-            var next = handlerDelegate;
-            handlerDelegate = () => behavior.Handle((dynamic)request, cancellationToken, next);
-        }
-
-        return await handlerDelegate();
+        return typed;
     }
 
     public async Task Publish<TNotification>(TNotification notification, CancellationToken cancellationToken = default)

@@ -9,7 +9,7 @@
       "MediatorFlow.Tests/1.0.0": {
         "dependencies": {
           "MediatorFlow.Application": "1.0.0",
-          "MediatorFlow.Core": "1.0.0",
+          "MediatorFlow.Core": "1.0.2",
           "Microsoft.Extensions.DependencyInjection": "10.0.5",
           "Microsoft.Extensions.Logging.Abstractions": "10.0.5",
           "Microsoft.NET.Test.Sdk": "17.14.1",
@@ -366,7 +366,7 @@
       },
       "MediatorFlow.Application/1.0.0": {
         "dependencies": {
-          "MediatorFlow.Core": "1.0.0"
+          "MediatorFlow.Core": "1.0.2"
         },
         "runtime": {
           "MediatorFlow.Application.dll": {
@@ -375,15 +375,15 @@
           }
         }
       },
-      "MediatorFlow.Core/1.0.0": {
+      "MediatorFlow.Core/1.0.2": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "10.0.5",
           "Microsoft.Extensions.Logging.Abstractions": "10.0.5"
         },
         "runtime": {
           "MediatorFlow.Core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
           }
         }
       }
@@ -498,7 +498,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MediatorFlow.Core/1.0.0": {
+    "MediatorFlow.Core/1.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

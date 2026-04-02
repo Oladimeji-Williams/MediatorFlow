@@ -452,7 +452,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "MediatorFlow.Core": "1.0.0"
+          "MediatorFlow.Core": "1.0.2"
         },
         "compile": {
           "bin/placeholder/MediatorFlow.Application.dll": {}
@@ -461,7 +461,7 @@
           "bin/placeholder/MediatorFlow.Application.dll": {}
         }
       },
-      "MediatorFlow.Core/1.0.0": {
+      "MediatorFlow.Core/1.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -1124,7 +1124,7 @@
       "path": "../MediatorFlow.Application/MediatorFlow.Application.csproj",
       "msbuildProject": "../MediatorFlow.Application/MediatorFlow.Application.csproj"
     },
-    "MediatorFlow.Core/1.0.0": {
+    "MediatorFlow.Core/1.0.2": {
       "type": "project",
       "path": "../MediatorFlow.Core/MediatorFlow.Core.csproj",
       "msbuildProject": "../MediatorFlow.Core/MediatorFlow.Core.csproj"
@@ -1133,7 +1133,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "MediatorFlow.Application >= 1.0.0",
-      "MediatorFlow.Core >= 1.0.0",
+      "MediatorFlow.Core >= 1.0.2",
       "Microsoft.Extensions.DependencyInjection >= 10.0.5",
       "Microsoft.Extensions.Logging.Abstractions >= 10.0.5",
       "Microsoft.NET.Test.Sdk >= 17.14.1",

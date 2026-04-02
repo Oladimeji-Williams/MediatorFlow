@@ -1,0 +1,11 @@
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\bin\Release\netstandard2.0\MediatorFlow.Generator.deps.json
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\bin\Release\netstandard2.0\MediatorFlow.Generator.dll
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\bin\Release\netstandard2.0\MediatorFlow.Generator.pdb
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\obj\Release\netstandard2.0\MediatorFlow.Generator.csproj.AssemblyReference.cache
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\obj\Release\netstandard2.0\MediatorFlow.Generator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\obj\Release\netstandard2.0\MediatorFlow.Generator.AssemblyInfoInputs.cache
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\obj\Release\netstandard2.0\MediatorFlow.Generator.AssemblyInfo.cs
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\obj\Release\netstandard2.0\MediatorFlow.Generator.csproj.CoreCompileInputs.cache
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\obj\Release\netstandard2.0\MediatorFlow.Generator.sourcelink.json
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\obj\Release\netstandard2.0\MediatorFlow.Generator.dll
+C:\Users\OladimejiWilliams\Desktop\Software Engineering\MediatorFlow\MediatorFlow.Generator\obj\Release\netstandard2.0\MediatorFlow.Generator.pdb

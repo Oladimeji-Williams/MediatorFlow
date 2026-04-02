@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v10.0": {
       "MediatorFlow.Application/1.0.0": {
         "dependencies": {
-          "MediatorFlow.Core": "1.0.0"
+          "MediatorFlow.Core": "1.0.2"
         },
         "runtime": {
           "MediatorFlow.Application.dll": {}
@@ -44,15 +44,15 @@
           }
         }
       },
-      "MediatorFlow.Core/1.0.0": {
+      "MediatorFlow.Core/1.0.2": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "10.0.5",
           "Microsoft.Extensions.Logging.Abstractions": "10.0.5"
         },
         "runtime": {
           "MediatorFlow.Core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
           }
         }
       }
@@ -85,7 +85,7 @@
       "path": "microsoft.extensions.logging.abstractions/10.0.5",
       "hashPath": "microsoft.extensions.logging.abstractions.10.0.5.nupkg.sha512"
     },
-    "MediatorFlow.Core/1.0.0": {
+    "MediatorFlow.Core/1.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
